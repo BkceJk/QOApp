@@ -7,17 +7,18 @@ const styles = StyleSheet.create({
     container: {
         padding: 20,
         paddingBottom: 25,
-        paddingTop: 40,
+        paddingTop: 80,
     }
 })
 const Principal = () => {
     return (
         <View >
         <View style={styles.container}>
-        <StyledText blue big>
+        <StyledText blue big center>
             QOGame
+            {/* la linea de arriba la escribi yo | Atte: Vicente */}
         </StyledText>
-        <StyledText>
+        <StyledText center bold>
         Quimica Organica Game
         </StyledText>
     </View>

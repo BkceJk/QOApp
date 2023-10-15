@@ -17,12 +17,16 @@ const styles = StyleSheet.create({
     },
     small: {
         fontSize: 10
+    },
+    center:{
+        textAlign: 'center'
     }
 })
 
-export default function StyledText ({ children, bold, blue, big, small }) {
+export default function StyledText ({ children, bold, blue, big, small, center }) {
     const textStyles = [
         styles.text,
+        center && styles.center,
         blue && styles.blue,
         bold && styles.bold,
         big && styles.big,
