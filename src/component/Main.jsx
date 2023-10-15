@@ -18,7 +18,7 @@ const Principal = () => {
             QOGame
         </StyledText>
         <StyledText>
-        Quimica Organica Game
+        Quimica Organica Gay
         </StyledText>
     </View>
 </View>
