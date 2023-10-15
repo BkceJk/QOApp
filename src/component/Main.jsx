@@ -1,6 +1,7 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native' 
+import { View, StyleSheet, Button } from 'react-native' 
 import StyledText from './StyledText'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 const styles = StyleSheet.create({
     container: {
@@ -11,12 +12,16 @@ const styles = StyleSheet.create({
 })
 const Principal = () => {
     return (
-    <View style={styles.container}>
-        <StyledText  fontWeight='bold'>
-            Prueba de texto alo
+        <View >
+        <View style={styles.container}>
+        <StyledText blue big>
+            QOGame
+        </StyledText>
+        <StyledText>
+        Quimica Organica Game
         </StyledText>
     </View>
-        
+</View>
     )
 }
 
