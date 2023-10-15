@@ -13,24 +13,28 @@ const styles = StyleSheet.create({
         color: 'blue'
     },
     big: {
-        fontSize: 20
+        fontSize: 30
     },
     small: {
         fontSize: 10
     },
     center:{
         textAlign: 'center'
+    },
+    black: {
+        color: '#000000'
     }
 })
 
-export default function StyledText ({ children, bold, blue, big, small, center }) {
+export default function StyledText ({ children, bold, blue, big, small, center, black }) {
     const textStyles = [
         styles.text,
         center && styles.center,
         blue && styles.blue,
         bold && styles.bold,
         big && styles.big,
-        small && styles.small
+        small && styles.small,
+        black && styles.black
 
     ]
     return (
