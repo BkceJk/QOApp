@@ -23,7 +23,7 @@ function MainScreen({ navigation }) {
 function SecondScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Segunda Página</Text>
+      <Text bold git blue>Juegos</Text>
       <Button
         title="Regresar a la Página Principal"
         onPress={() => navigation.navigate('MainScreen')}
@@ -41,8 +41,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="MainScreen" component={MainScreen} />
-        <Stack.Screen name="SecondScreen" component={SecondScreen} />
+        <Stack.Screen name="Pagina Principal" component={MainScreen} />
+        <Stack.Screen name="Juegos" component={SecondScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
