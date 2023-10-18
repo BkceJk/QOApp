@@ -8,7 +8,7 @@ import StyledText from './StyledText';
 function MainScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>Química Orgánica</Text>
+      <Text bold big>Química Orgánica</Text>
       <Button
         title="Abrir Segunda Página"
         onPress={() => navigation.navigate('SecondScreen')}
