@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import StyledText from './StyledText';
+import SecondScreen from "./PaginaJuegos"
 
 function MainScreen({ navigation }) {
   return (
@@ -14,21 +15,6 @@ function MainScreen({ navigation }) {
         onPress={() => navigation.navigate('SecondScreen')}
         color="#E5FF83"
         titleStyle={{ color: '#000000' }}
-      />
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-function SecondScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text bold git blue>Juegos</Text>
-      <Button
-        title="Regresar a la Página Principal"
-        onPress={() => navigation.navigate('MainScreen')}
-        color="#19F537"
-        titleStyle={{ color: 'red' }}
       />
       <StatusBar style="auto" />
     </View>
