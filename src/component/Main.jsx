@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import StyledText from './StyledText';
-import SecondScreen from "./PaginaJuegos"
 
 function MainScreen({ navigation }) {
   return (
