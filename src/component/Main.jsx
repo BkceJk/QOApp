@@ -1,8 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import React, { useEffect }  from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Linking } from 'react-native';
+import { TouchableWithoutFeedback } from 'react-native';
+import { JellyTriangle } from '@uiball/loaders'
+
+function Carga({ navigation }) {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Pagina Principal');
+    }, 5000);
+  }, []);
+
+  return (
+    <View style={{alignContent: 'center'}}>
+      <JellyTriangle
+          size = {60}
+          speed = {1.75} 
+          color = "black"
+            />
+      <ActivityIndicator size="large" color="#7BE079" />
+    </View>
+  );
+}
 
 function PaginaPrincipal({ navigation }) {
   return (
@@ -30,6 +52,29 @@ function PaginaPrincipal({ navigation }) {
       >
         <Text style={styles.buttonText}>Tabla De Carbonos</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+      style={{ width: 90, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 20 }}
+      onPress={openMailComposer}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Soporte</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 115 }}
+            onPress={Instagram}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Instagram}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 115  }}>
+    <Image source={require('./Instagram.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 150 }}
+            onPress={WhatsApp}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={WhatsApp}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 150  }}>
+    <Image source={require('./WhatsApp.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
       <StatusBar style="auto" />
     </View>
   )
@@ -51,6 +96,29 @@ function Ayuda({ navigation }) {
       >
         <Text style={styles.buttonText}>Tabla De Carbonos</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+      style={{ width: 90, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 20 }}
+      onPress={openMailComposer}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Soporte</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 115 }}
+            onPress={Instagram}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Instagram}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 115  }}>
+    <Image source={require('./Instagram.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 150 }}
+            onPress={WhatsApp}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={WhatsApp}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 150  }}>
+    <Image source={require('./WhatsApp.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
       <StatusBar style="auto" />
     </View>
   );
@@ -73,6 +141,29 @@ function TablaDeCarbonos({ navigation }) {
       >
         <Text style={styles.buttonText}>Ayuda/Guias/Apuntes</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+      style={{ width: 90, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 20 }}
+      onPress={openMailComposer}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Soporte</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 115 }}
+            onPress={Instagram}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Instagram}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 115  }}>
+    <Image source={require('./Instagram.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 150 }}
+            onPress={WhatsApp}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={WhatsApp}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 150  }}>
+    <Image source={require('./WhatsApp.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
       <StatusBar style="auto" />
     </View>
   );
@@ -101,19 +192,42 @@ function Juegos({ navigation }) {
       >
         <Text style={styles.buttonText}>Avanzado</Text>
       </TouchableOpacity>
+      <TouchableOpacity 
+      style={{ width: 90, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 20 }}
+      onPress={openMailComposer}>
+        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Soporte</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 115 }}
+            onPress={Instagram}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={Instagram}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 115  }}>
+    <Image source={require('./Instagram.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
+      <TouchableOpacity
+            style={{ width: 30, height: 30, backgroundColor: '#B4B4B4', alignItems: 'center', justifyContent: 'center', position: 'absolute', bottom: 20, right: 150 }}
+            onPress={WhatsApp}>
+      </TouchableOpacity>
+      <TouchableWithoutFeedback onPress={WhatsApp}>
+      <View style={{ width: 30, height: 30, alignItems: 'center', justifyContent: 'center', position: 'absolute', pointerEvents: 'box-none', bottom: 20, right: 150  }}>
+    <Image source={require('./WhatsApp.png')} style={{ width: 26, height: 26 }} />
+  </View>
+      </TouchableWithoutFeedback>
       <StatusBar style="auto" />
     </View>
   );
 }
 
-// Otras funciones de pantalla como Ayuda y TablaDeCarbonos seguirían un patrón similar.
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="SplashScreen">
+        <Stack.Screen name="SplashScreen" component={Carga} />
         <Stack.Screen name="Pagina Principal" component={PaginaPrincipal} />
         <Stack.Screen name="Juegos" component={Juegos} />
         <Stack.Screen name="Ayuda" component={Ayuda} />
@@ -121,6 +235,16 @@ export default function App() {
       </Stack.Navigator>
     </NavigationContainer>
   );
+}
+
+const openMailComposer = () => {
+  Linking.openURL('mailto:supp.bkcejk@gmail.com')   
+}
+const Instagram = () => {
+  Linking.openURL('https://www.instagram.com/vii._tv/')   
+}
+const WhatsApp = () => {
+  Linking.openURL('https://api.whatsapp.com/send/?phone=%2B56935370482&text&type=phone_number&app_absent=0') 
 }
 
 const styles = StyleSheet.create({
