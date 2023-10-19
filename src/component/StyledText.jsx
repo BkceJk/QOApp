@@ -23,10 +23,18 @@ const styles = StyleSheet.create({
     },
     black: {
         color: '#000000'
+    },
+    botones: {
+        width: 270,
+        height: 60,
+        backgroundColor: '#E5FF83',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginBottom: 17,
     }
 })
 
-export default function StyledText ({ children, bold, blue, big, small, center, black }) {
+export default function StyledText ({ children, bold, blue, big, small, center, black, botones }) {
     const textStyles = [
         styles.text,
         center && styles.center,
@@ -34,7 +42,8 @@ export default function StyledText ({ children, bold, blue, big, small, center, 
         bold && styles.bold,
         big && styles.big,
         small && styles.small,
-        black && styles.black
+        black && styles.black,
+        botones && styles.botones
 
     ]
     return (
