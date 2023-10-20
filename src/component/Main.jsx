@@ -20,21 +20,6 @@ function MainScreen({ navigation }) {
     </View>
   );
 }
-function SecondScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text bold big blue>Juegos</Text>
-      <Button
-        title="Regresar a la Página Principal"
-        onPress={() => navigation.navigate('MainScreen')}
-        color="#19F537"
-        titleStyle={{ color: 'red' }}
-      />
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
 
 const Stack = createStackNavigator();
 
@@ -42,8 +27,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Pagina Principal" component={MainScreen} color='black'/>
-        <Stack.Screen name="Juegos" component={SecondScreen} />
+        <Stack.Screen name="Pagina Principal" component={MainScreen}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
