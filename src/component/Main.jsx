@@ -1,30 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect }  from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import React  from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Linking } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native';
-import { JellyTriangle } from '@uiball/loaders'
-
-function Carga({ navigation }) {
-  useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('Pagina Principal');
-    }, 5000);
-  }, []);
-
-  return (
-    <View style={{alignContent: 'center'}}>
-      <JellyTriangle
-          size = {60}
-          speed = {1.75} 
-          color = "black"
-            />
-      <ActivityIndicator size="large" color="#7BE079" />
-    </View>
-  );
-}
+import JuegoBasico from './ModosDeJuegos/JuegoBasico'
 
 function PaginaPrincipal({ navigation }) {
   return (
@@ -123,8 +104,6 @@ function Ayuda({ navigation }) {
     </View>
   );
 }
-<<<<<<< HEAD
-=======
 function TablaDeCarbonos({ navigation }) {
   return (
     <View style={styles.container}>
@@ -176,11 +155,11 @@ function Juegos({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={{ fontSize: 36, fontWeight: 'bold', marginBottom: 82, marginTop: 170 }}>Dificultades</Text>
-      <TouchableOpacity
-        style={styles.buttonGames}
-        onPress={() => navigation.navigate('Pagina Principal')}
+      <TouchableOpacity 
+      style={styles.buttonGames}
+      onPress={() => navigation.navigate('Juego Basico')}
       >
-        <Text style={styles.buttonText}>Principiante</Text>
+        <Text style={styles.buttonText}>Básico</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.buttonGames}
@@ -222,24 +201,18 @@ function Juegos({ navigation }) {
   );
 }
 
->>>>>>> bf2788bb80411ba3f699a558c4380b04277427fa
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-<<<<<<< HEAD
       <Stack.Navigator>
-        <Stack.Screen name="Pagina Principal" component={MainScreen}/>
-=======
-      <Stack.Navigator initialRouteName="SplashScreen">
-        <Stack.Screen name="SplashScreen" component={Carga} />
         <Stack.Screen name="Pagina Principal" component={PaginaPrincipal} />
         <Stack.Screen name="Juegos" component={Juegos} />
         <Stack.Screen name="Ayuda" component={Ayuda} />
         <Stack.Screen name="Tabla De Carbonos" component={TablaDeCarbonos} />
->>>>>>> bf2788bb80411ba3f699a558c4380b04277427fa
+        <Stack.Screen name="Juego Basico" component={JuegoBasico} />
       </Stack.Navigator>
     </NavigationContainer>
   );
