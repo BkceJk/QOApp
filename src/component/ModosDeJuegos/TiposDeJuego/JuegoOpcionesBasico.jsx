@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TouchableOpacity, Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, Image, StyleSheet,  } from 'react-native';
 
-const JuegoPalabra = () => {
+const JuegoOpciones = () => {
   const [preguntaActual, setPreguntaActual] = useState(null);
   const [respuestas, setRespuestas] = useState([]);
   const [respuestaCorrecta, setRespuestaCorrecta] = useState(null);
@@ -29,8 +29,7 @@ const JuegoPalabra = () => {
   // Función para manejar la selección de una respuesta
   const seleccionarRespuesta = (respuesta) => {
     if (respuesta === respuestaCorrecta) {
-      // Respuesta correcta, cambia el borde a verde
-      // Puedes agregar lógica adicional para llevar un registro de puntos, etc.
+      
     } else {
       // Respuesta incorrecta, cambia el borde a rojo
     }
@@ -46,6 +45,15 @@ const JuegoPalabra = () => {
       {preguntaActual && (
         <Image source={preguntaActual.imagen} style={styles.image} />
       )}
+        <View>
+          <Text >Siguiente Pregunta</Text>
+        <TouchableOpacity
+          style={styles.siguienteButton}
+          onPress={seleccionarPreguntaAleatoria}
+        >
+          <Text >Siguiente Pregunta</Text>
+        </TouchableOpacity>
+      </View>
       <View style={styles.opcionesContainer}>
       {respuestas.map((opcion, index) => (
   <TouchableOpacity
@@ -53,17 +61,11 @@ const JuegoPalabra = () => {
     style={styles.opcionButton}
     onPress={() => seleccionarRespuesta(opcion)}
   >
-    <Text style={{ textAlign: 'center' }}>{opcion}</Text>
+    <Text style={{ textAlign:'center'}}>{opcion}</Text>
   </TouchableOpacity>
 ))}
       </View>
-      <TouchableOpacity
-        style={styles.siguienteButton}
-        onPress={seleccionarPreguntaAleatoria}
-      >
-        <Text >Siguiente Pregunta</Text>
-      </TouchableOpacity>
-    </View>
+          </View>
   );
 };
 
@@ -83,13 +85,14 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'center',
     top: 150,
+    marginHorizontal: 100
   },
   opcionButton: {
     margin: 20,
     padding: 15,
-    borderColor: 'black',
     backgroundColor: '#B4B4B4',
     width: 150,
+    position: 'absolute'
 
   },
   siguienteButton: {
@@ -98,7 +101,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#7BE079',
     borderRadius: 10,
     top: 280,
-    left: 160
+    left: 120,
+    position: 'absolute'
   },
   opcionText: {
     textAlign: 'center',
@@ -106,4 +110,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default JuegoPalabra;
+export default JuegoOpciones;

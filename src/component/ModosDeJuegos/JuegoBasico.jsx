@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import JuegoPalabra from './TiposDeJuego/JuegoPalabra';
+import JuegoOpciones from './TiposDeJuego/JuegoOpcionesBasico';
 
 const JuegoBasico = () => {
   const cosasBasicas = [
-    "JuegoPalabra", // este es el archivo que quiero que detecte el otro
-    "Palabra",
-    "Bloques",
+    "JuegoOpciones", // este es el archivo que quiero que detecte el otro
+    "JuegoPalabra",
+    "JuegoBloques",
   ];
 
   const [cosaActual, setCosaActual] = useState(null);
@@ -26,9 +26,7 @@ const JuegoBasico = () => {
         <Text style={{ fontSize: 32, fontWeight: 'bold' }}>Jugar</Text>
       </TouchableOpacity>
 
-   {cosaActual === "JuegoPalabra" && <JuegoPalabra />}
-      
-      
+   {cosaActual === "JuegoOpciones" && <JuegoOpciones />}
     </View>
   );
 };

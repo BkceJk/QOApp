@@ -222,7 +222,7 @@ const openMailComposer = () => {
   Linking.openURL('mailto:supp.bkcejk@gmail.com')   
 }
 const Instagram = () => {
-  Linking.openURL('https://www.instagram.com/vii._tv/')   
+  Linking.openURL('https://www.instagram.com/_qz0ng/')   
 }
 const WhatsApp = () => {
   Linking.openURL('https://api.whatsapp.com/send/?phone=%2B56935370482&text&type=phone_number&app_absent=0') 
